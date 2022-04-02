@@ -48,7 +48,7 @@ docker build -t sample-simple .
 The server can be run as follows:
 
 ```
-docker run --rm -p 6789:6789 smaple-simple
+docker run --rm -p 6789:6789 sample-simple
 ```
 
 Access to `http://localhost:6789/` and you'll get a response.
