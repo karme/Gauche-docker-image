@@ -1,14 +1,14 @@
 .PHONY: image push run clean
 
-VERSION=0.9.11
-BUILD=-build2
+VERSION=0.9.15
+BUILD=-build1
 TESTSCRIPTS=$(shell echo scripts/*.sh)
 
 Dockerfile : gen-dockerfile.sh scripts/self-host-test $(TESTSCRIPTS)
 	./gen-dockerfile.sh $(VERSION)
 
 image: Dockerfile
-	docker build \
+	docker buildx build \
 	  -t practicalscheme/gauche-self-host-test:$(VERSION)$(BUILD) \
 	  .
 

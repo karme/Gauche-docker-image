@@ -1,8 +1,8 @@
-VERSION=0.9.11-p1
+VERSION=0.9.15
 TAG=latest
 
 image:
-	docker build \
+	docker buildx build \
 	   -t practicalscheme/gauche:$(VERSION) \
 	   -t practicalscheme/gauche:$(TAG) \
 	   --build-arg gauche_version=$(VERSION) \
